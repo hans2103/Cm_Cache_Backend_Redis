@@ -1,5 +1,5 @@
 {
-    "name":"colinmollenhour/cache-backend-redis",
+    "name":"hans2103/colinmollenhour_cache-backend-redis",
     "type":"magento-module",
     "license":"BSD-3-Clause",
     "homepage":"https://github.com/colinmollenhour/Cm_Cache_Backend_Redis",
