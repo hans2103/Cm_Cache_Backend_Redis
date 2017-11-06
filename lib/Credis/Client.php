@@ -329,7 +329,7 @@ class Credis_Client {
      */
     public function isSubscribed()
     {
-    	return $this->subscribed;
+        return $this->subscribed;
     }
 
     /**
@@ -645,9 +645,9 @@ class Credis_Client {
      */
     public function pUnsubscribe()
     {
-    	list($command, $channel, $subscribedChannels) = $this->__call('punsubscribe', func_get_args());
-    	$this->subscribed = $subscribedChannels > 0;
-    	return array($command, $channel, $subscribedChannels);
+        list($command, $channel, $subscribedChannels) = $this->__call('punsubscribe', func_get_args());
+        $this->subscribed = $subscribedChannels > 0;
+        return array($command, $channel, $subscribedChannels);
     }
 
     /**
@@ -662,16 +662,16 @@ class Credis_Client {
     }
 
     /**
-	 * @param int $Iterator
-	 * @param string $field
-	 * @param string $pattern
-	 * @param int $count
-	 * @return bool|array
-	 */
-	public function hscan(&$Iterator, $field, $pattern = null, $count = null)
-	{
-		return $this->__call('hscan', array($field, &$Iterator, $pattern, $count));
-	}
+     * @param int $Iterator
+     * @param string $field
+     * @param string $pattern
+     * @param int $count
+     * @return bool|array
+     */
+    public function hscan(&$Iterator, $field, $pattern = null, $count = null)
+    {
+        return $this->__call('hscan', array($field, &$Iterator, $pattern, $count));
+    }
 
     /**
      * @param int $Iterator
@@ -738,9 +738,9 @@ class Credis_Client {
      */
     public function unsubscribe()
     {
-    	list($command, $channel, $subscribedChannels) = $this->__call('unsubscribe', func_get_args());
-    	$this->subscribed = $subscribedChannels > 0;
-    	return array($command, $channel, $subscribedChannels);
+        list($command, $channel, $subscribedChannels) = $this->__call('unsubscribe', func_get_args());
+        $this->subscribed = $subscribedChannels > 0;
+        return array($command, $channel, $subscribedChannels);
     }
 
     /**
@@ -850,24 +850,24 @@ class Credis_Client {
                 case 'sscan':
                 case 'zscan':
                 case 'hscan':
-					$ref =& $args[1];
-					if (empty($ref))
-					{
-						$ref = 0;
-					}
-					$eArgs = array($args[0],$ref);
-					if (!empty($args[2]))
-					{
-						$eArgs[] = 'MATCH';
-						$eArgs[] = $args[2];
-					}
-					if (!empty($args[3]))
-					{
-						$eArgs[] = 'COUNT';
-						$eArgs[] = $args[3];
-					}
-					$args = $eArgs;
-					break;
+                    $ref =& $args[1];
+                    if (empty($ref))
+                    {
+                        $ref = 0;
+                    }
+                    $eArgs = array($args[0],$ref);
+                    if (!empty($args[2]))
+                    {
+                        $eArgs[] = 'MATCH';
+                        $eArgs[] = $args[2];
+                    }
+                    if (!empty($args[3]))
+                    {
+                        $eArgs[] = 'COUNT';
+                        $eArgs[] = $args[3];
+                    }
+                    $args = $eArgs;
+                    break;
                 case 'zrangebyscore':
                 case 'zrevrangebyscore':
                 case 'zrange':
